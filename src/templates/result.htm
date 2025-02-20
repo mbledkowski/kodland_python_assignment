@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quiz</title>
+  <style>
+    body {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Quiz</h1>
+  <div>
+    <h2>Thank you for taking the quiz {{result[0]}}!</h2>
+    <p>Your score is {{result[1]*100}}%</p>
+  </div>
+  <!-- User's best score in the top right corner -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    {% if best %}
+    <p>
+      Best Score: {{best[1]*100}}%
+      <br>
+      User: {{best[0]}}
+    </p>
+    {% else %}
+    <p>No answers submitted yet.</p>
+    {% endif %}
+  </div>
+
+  <!-- Footer with information about the author -->
+  <footer>
+    <p>Made by <a href="https://mble.dk">Maciej Błędkowski</a></p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quiz</title>
+  <style>
+    body {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Quiz</h1>
+  <form>
+    <!-- Question about the user's name -->
+    <h2>Question 1: What is your name?</h2>
+    <input type="text" name="username">
+
+    <!-- First question with multiple choice -->
+    <h2>Question 2: Which Python feature is the primary reason for its popularity in AI development?</h2>
+    <input type="radio" name="question1" value="a">Limited library availability<br>
+    <input type="radio" name="question1" value="b">C++-like syntax<br>
+    <input type="radio" name="question1" value="c">Rich specialized libraries (TensorFlow, PyTorch)<br>
+    <input type="radio" name="question1" value="d">Lack of support for large projects<br>
+
+    <!-- Second question with multiple choice -->
+    <h2>Question 3: Which step is critical before training an AI model?</h2>
+    <input type="radio" name="question2" value="a">Data collection and preprocessing<br>
+    <input type="radio" name="question2" value="b">Writing technical documentation<br>
+    <input type="radio" name="question2" value="c">Choosing an IDE<br>
+    <input type="radio" name="question2" value="d">Testing user interfaces<br>
+
+    <h2>Question 4: Which library is most commonly used for implementing neural networks?</h2>
+    <input type="radio" name="question3" value="a">Pandas<br>
+    <input type="radio" name="question3" value="b">Matplotlib<br>
+    <input type="radio" name="question3" value="c">PyTorch<br>
+    <input type="radio" name="question3" value="d">Django<br>
+
+    <h2>Question 5: What is a data scientist’s primary role in AI development?</h2>
+    <input type="radio" name="question4" value="a">Designing GUIs<br>
+    <input type="radio" name="question4" value="b">Analyzing data and building predictive models<br>
+    <input type="radio" name="question4" value="c">Optimizing computer networks<br>
+    <input type="radio" name="question4" value="d">Creating 3D animations<br>
+
+    <h2>Question 6: What is Keras’ key advantage for beginners?</h2>
+    <input type="radio" name="question5" value="a">Requires advanced C++ knowledge<br>
+    <input type="radio" name="question5" value="b">Simplifies building deep learning models<br>
+    <input type="radio" name="question5" value="c">Only compatible with TensorFlow<br>
+    <input type="radio" name="question5" value="d">No cloud integration<br>
+
+    <h2>Question 7: Which application exemplifies deep learning?</h2>
+    <input type="radio" name="question6" value="a">Statistical sales trend analysis<br>
+    <input type="radio" name="question6" value="b">Medical image recognition<br>
+    <input type="radio" name="question6" value="c">Generating basic Excel reports<br>
+    <input type="radio" name="question6" value="d">RAM usage optimization<br>
+
+    <br>
+    <input type="submit" value="Submit Answers">
+  </form>
+
+  <!-- User's best score in the top right corner -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    {% if best %}
+    <p>
+      Best Score: {{best[1]*100}}%
+      <br>
+      User: {{best[0]}}
+    </p>
+    {% else %}
+    <p>No answers submitted yet.</p>
+    {% endif %}
+  </div>
+  <!-- Footer with information about the author -->
+  <footer style="position: static;">
+    <p>Made by <a href="https://mble.dk">Maciej Błędkowski</a></p>
+  </footer>
+</body>
+
+</html>
